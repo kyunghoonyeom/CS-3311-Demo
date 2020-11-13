@@ -108,7 +108,7 @@ function delete_appointment(id) {
 
 function demo_add() {
     var doctor = window.prompt("Enter the doctor's name: ");
-    add_appointment(randomDate(new Date(), end), doctor)
+    add_appointment(randomDate(new Date(), end), doctor);
 }
 
 function demo_wipe() {
