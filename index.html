@@ -12,13 +12,25 @@
     </head>
     <body>
         <div class="text-center mt-2">
-            <button type="button" class="btn btn-sm btn-primary " onclick="demo_add();">Add</button>
+            <button type="button" class="btn btn-sm btn-primary " onclick="openForm();">Add</button>
             <button type="button" class="btn btn-sm btn-primary " onclick="demo_wipe()">Delete</button>
+
+            <div class="form-popup" id="add">
+                <h3>New Appointment</h4>
+                <label for="doctor"><b>Doctor:</b></label>
+                <input type="text" placeholder="name" name="doctor" id="doctor" required>
+                <label for="datetime"><b>Date:</b></label>
+                <input type="datetime-local" name="datetime" id="datetime" required>
+
+                <button type="submit" class="btn btn-sm btn-primary " onclick="confirmForm()">Confirm</button>
+                <button type="button" class="btn btn-sm btn-primary " onclick="closeForm()">Cancel</button>
+            </div>
 
             <div id="appointment_list"></div>
         </div>
         
         <script>
+            closeForm();
             add_appointment(new Date(), "John Bart");           
             add_appointment(randomDate(new Date(), end), "Kevin Jones");
         </script>

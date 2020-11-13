@@ -120,3 +120,23 @@ function demo_wipe() {
 function randomDate(start, end) {
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
+
+function openForm() {
+    document.getElementById("add").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("add").style.display = "none";
+}
+
+function confirmForm() {
+    var doctor = document.getElementById('doctor');
+    var datetime = document.getElementById('datetime');
+
+    if (doctor.value != '' && datetime.value != '') {
+        add_appointment(datetime, doctor);
+        closeForm();
+    } else {
+        window.alert('Fill out the entries.');
+    }
+}
