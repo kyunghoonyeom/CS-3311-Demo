@@ -12,11 +12,15 @@
     </head>
     <body>
         <div class="text-center mt-2">
-            <button type="button" class="btn btn-sm btn-primary " onclick="add_appointment();">Add</button>
-            <button type="button" class="btn btn-sm btn-primary " onclick="delete_appointment()">Delete</button>
-        <div id="appointment_list"></div>
+            <button type="button" class="btn btn-sm btn-primary " onclick="demo_add();">Add</button>
+            <button type="button" class="btn btn-sm btn-primary " onclick="demo_wipe()">Delete</button>
+
+            <div id="appointment_list"></div>
         </div>
         
-        <script>add_appointment()</script>
+        <script>
+            add_appointment(new Date(), "John Bart");           
+            add_appointment(randomDate(new Date(), end), "Kevin Jones");
+        </script>
     </body>
 </html>
