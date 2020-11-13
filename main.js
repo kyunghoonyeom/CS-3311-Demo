@@ -139,10 +139,11 @@ function closeForm() {
 }
 
 function confirmForm() {
-    var doctor = document.getElementById('doctor');
-    var datetime = document.getElementById('datetime');
+    var doctor = document.getElementById('doctor').value;
+    var date_str = document.getElementById('datetime').value;
+    var datetime = new Date(date_str);
 
-    if (doctor.value != '' && datetime.value != '') {
+    if (doctor != '' && datetime != '') {
         add_appointment(datetime, doctor);
         closeForm();
     } else {
