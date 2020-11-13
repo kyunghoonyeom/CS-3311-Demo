@@ -62,7 +62,7 @@ class Appointment extends React.Component {
             ),
             e(
                 'button',
-                {type: 'button', class: 'btn mb-2 mt-2 mx-auto btn-danger', onClick: () => { delete_appointment(this.id) }},
+                {type: 'button', class: 'btn mb-2 mt-2 mx-auto btn-danger', onClick: () => { confirm_cancellation(this.id) }},
                 'Cancel'
             )
         );
@@ -104,6 +104,15 @@ function add_appointment(datetime, doctor) {
 function delete_appointment(id) {
     delete appointments[id];
     render();
+}
+
+function confirm_cancellation(id) {
+    var r = confirm("Do you really cancel the appointment?");
+    if (r == true) {
+        return delete_appointment(id);
+    } else {
+        return;
+    }
 }
 
 function demo_add() {
