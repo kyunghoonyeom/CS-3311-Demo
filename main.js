@@ -145,6 +145,9 @@ function confirmForm() {
 
     if (doctor != '' && datetime != '') {
         add_appointment(datetime, doctor);
+        document.getElementById('doctor').value = '';
+        document.getElementById('datetime').value = '';
+        date_str=null;
         closeForm();
     } else {
         window.alert('Fill out the entries.');
