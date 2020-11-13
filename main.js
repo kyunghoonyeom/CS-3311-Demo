@@ -42,11 +42,11 @@ class Appointment extends React.Component {
     render() {
         var dateString =
             this.datetime.getUTCFullYear() + "." +
-            ("0" + (this.datetime.getUTCMonth()+1)).slice(-2) + "." +
-            ("0" + this.datetime.getUTCDate()).slice(-2)
+            ("0" + (this.datetime.getMonth()+1)).slice(-2) + "." +
+            ("0" + this.datetime.getDate()).slice(-2)
         var timeString = 
-            ("0" + this.datetime.getUTCHours()).slice(-2) + ":" +
-            ("0" + this.datetime.getUTCMinutes()).slice(-2);
+            ("0" + this.datetime.getHours()).slice(-2) + ":" +
+            ("0" + this.datetime.getMinutes()).slice(-2);
         var block = e('div',
             {class: 'card border-dark mt-2 mx-auto text-center', style : CardWidth},
             e(
