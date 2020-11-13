@@ -9,7 +9,7 @@ end.setMonth(end.getMonth() + 3);
 /*
 Very important!
 
-React.createElement(type, {class: 'hey', child1, child2, child3...)
+React.createElement(type, {class: 'hey'}, child1, child2, child3...)
 
 is equivalent to
 
