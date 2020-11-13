@@ -3,6 +3,9 @@
 var appointments = {};
 var static_inst = 0;
 
+var end = new Date()
+end.setMonth(end.getMonth() + 3);
+
 /*
 Very important!
 
@@ -92,10 +95,7 @@ function render() {
     ), domContainer);
 }
 
-function add_appointment() {
-    var doctor = window.prompt("Enter the doctor's name: ");
-    var datetime = new Date();
-    datetime.setDate(datetime.getDate() + static_inst);
+function add_appointment(datetime, doctor) {
     appointments[static_inst] = new Appointment({}, datetime, doctor, static_inst);
     static_inst++;
     render();
@@ -104,4 +104,19 @@ function add_appointment() {
 function delete_appointment(id) {
     delete appointments[id];
     render();
+}
+
+function demo_add() {
+    var doctor = window.prompt("Enter the doctor's name: ");
+    add_appointment(randomDate(new Date(), end), doctor)
+}
+
+function demo_wipe() {
+    appointments = {};
+    static_inst = 0;
+    render();
+}
+
+function randomDate(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
